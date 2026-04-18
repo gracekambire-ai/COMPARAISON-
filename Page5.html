@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canall+ | Nos formules d'abonnement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+            background-color: #000000;
+            border-bottom: 1px solid #1f1f1f;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFFFFF 0%, #AAAAAA 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+            border-bottom: 2px solid white;
+            padding-bottom: 4px;
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid #ffffff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: black;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 2rem 0 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Grille des offres */
+        .offres-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .offre-card {
+            flex: 1;
+            min-width: 260px;
+            background: #0c0c0c;
+            border-radius: 28px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .offre-card:hover {
+            transform: translateY(-8px);
+            border-color: #444;
+            box-shadow: 0 20px 30px -12px rgba(255,255,255,0.05);
+        }
+
+        .offre-card h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .prix {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 1rem 0;
+        }
+
+        .prix small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #aaa;
+        }
+
+        .ancien-prix {
+            font-size: 0.9rem;
+            color: #888;
+            text-decoration: line-through;
+            margin-bottom: 0.5rem;
+        }
+
+        .features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .features li {
+            margin: 0.6rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .btn-offre {
+            background: transparent;
+            border: 1px solid #ffffff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn-offre:hover {
+            background: white;
+            color: black;
+        }
+
+        /* Badge populaire */
+        .badge {
+            display: inline-block;
+            background: #1f1f1f;
+            padding: 0.25rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+
+        .badge-pop {
+            background: #2a2a2a;
+            color: #ffd700;
+        }
+
+        /* Section information complémentaire */
+        .info-banner {
+            background: #0a0a0a;
+            border-radius: 24px;
+            padding: 2rem;
+            margin: 2rem 0 3rem;
+            text-align: center;
+            border: 1px solid #1f1f1f;
+        }
+
+        .info-banner p {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #010101;
+            padding: 2rem 0;
+            text-align: center;
+            color: #777;
+            font-size: 0.8rem;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .offre-card h3 {
+                font-size: 1.4rem;
+            }
+            .prix {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">CANALL+</div>
+            <ul class="nav-links">
+                 <li><a href="SITE 1.html" class="active">Accueil</a></li>
+                <li><a href="page2.html">Sport</a></li>
+                <li><a href="Page3.html">Chaînes</a></li>
+                <li><a href="Page4.html">Aide</a></li>
+                <li><a href="Page5.html">Formules</a></li>
+            </ul>
+            <button class="btn-outline-light" onclick="alert('Espace abonné Canall+')">Espace abonné</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>📦 Nos formules d'abonnement</h2>
+            <div class="offres-grid">
+                <!-- ACCESS -->
+                <div class="offre-card">
+                    <div class="badge">ENTRÉE DE GAMME</div>
+                    <h3>ACCESS</h3>
+                    <div class="prix">5 000 FCFA <small>/mois</small></div>
+                    <ul class="features">
+                        <li>50+ chaînes TV</li>
+                        <li>Chaînes nationales & divertissement</li>
+                        <li>Application myCANAL incluse</li>
+                        <li>Replay 3 jours</li>
+                    </ul>
+                    <button class="btn-offre" onclick="alert('Offre ACCESS sélectionnée')">Je m'abonne</button>
+                </div>
+
+                <!-- EVASION -->
+                <div class="offre-card">
+                    <div class="badge">POPULAIRE</div>
+                    <h3>EVASION</h3>
+                    <div class="prix">10 000 FCFA <small>/mois</small></div>
+                    <ul class="features">
+                        <li>100+ chaînes TV</li>
+                        <li>Sport (CANAL+ SPORT 1 & 2)</li>
+                        <li>Cinéma & séries</li>
+                        <li>Application myCANAL + Replay 7 jours</li>
+                    </ul>
+                    <button class="btn-offre" onclick="alert('Offre EVASION sélectionnée')">Je m'abonne</button>
+                </div>
+
+                <!-- ACCESS+ -->
+                <div class="offre-card">
+                    <div class="badge">PLUS DE CONTENUS</div>
+                    <h3>ACCESS+</h3>
+                    <div class="prix">15 000 FCFA <small>/mois</small></div>
+                    <ul class="features">
+                        <li>120+ chaînes TV</li>
+                        <li>Toutes les chaînes CANAL+</li>
+                        <li>Sport & divertissement renforcés</li>
+                        <li>Replay 14 jours</li>
+                    </ul>
+                    <button class="btn-offre" onclick="alert('Offre ACCESS+ sélectionnée')">Je m'abonne</button>
+                </div>
+
+                <!-- TOUT CANAL+ (Premium) -->
+                <div class="offre-card">
+                    <div class="badge badge-pop">⭐ PREMIUM</div>
+                    <h3>TOUT CANAL+</h3>
+                    <div class="ancien-prix">Anciennement 40 000 FCFA</div>
+                    <div class="prix">25 000 FCFA <small>/mois</small></div>
+                    <ul class="features">
+                        <li>200+ chaînes TV</li>
+                        <li>Netflix inclus !</li>
+                        <li>beIN SPORTS + DStv English Plus</li>
+                        <li>4 écrans simultanés + 4K</li>
+                        <li>Créations originales CANAL+</li>
+                        <li>Replay 30 jours</li>
+                    </ul>
+                    <button class="btn-offre" onclick="alert('Offre TOUT CANAL+ sélectionnée')">Je m'abonne</button>
+                </div>
+            </div>
+
+            <!-- Options additionnelles -->
+            <div class="info-banner">
+                <p>📱 <strong>Pass CANAL+ via Orange</strong> — Sans engagement : 1 000 FCFA/jour • 5 000 FCFA/semaine • 12 000 FCFA/mois</p>
+                <p style="margin-top: 0.5rem;">🎬 <strong>Option Netflix</strong> disponible à partir de 3 000 FCFA/mois pour les formules ACCESS, EVASION et ACCESS+</p>
+                <p style="margin-top: 0.5rem;">💳 Paiement accepté : Orange Money, MTN Money, Wave, carte bancaire</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Canall+ Côte d'Ivoire — Tarifs TTC en vigueur (mise à jour avril 2026)</p>
+            <p style="margin-top: 8px;">*Offres soumises à conditions. Prix indicatifs, vérifier en agence.</p>
+        </div>
+    </footer>
+</body>
+</html>
