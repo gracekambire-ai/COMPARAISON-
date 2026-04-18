@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startimess | TV pour toute la famille</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #fff8f0;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #2c2c2c;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, #F57C00 0%, #FF9800 100%);
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #FFD700;
+            text-shadow: 2px 2px 0 rgba(200, 60, 0, 0.3);
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+            padding: 0.5rem 0;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #FFD700;
+            border-bottom: 3px solid #FFD700;
+        }
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid #FFD700;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            color: #FFD700;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-outline-light:hover {
+            background: #FFD700;
+            color: #F57C00;
+        }
+        .btn-primary {
+            background: #FFD700;
+            color: #E65100;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-primary:hover {
+            background: #FFC107;
+            transform: scale(1.02);
+        }
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+            padding: 2rem 0 3rem;
+            border-radius: 0 0 32px 32px;
+        }
+        .hero-image {
+            width: 100%;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 500px;
+            object-fit: cover;
+        }
+        .hero-caption {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        .hero-caption h1 {
+            font-size: 2.5rem;
+            color: #E65100;
+            margin-bottom: 0.5rem;
+        }
+        .hero-caption p {
+            font-size: 1.2rem;
+            color: #5a3a1a;
+        }
+        footer {
+            background: #2c1a0c;
+            padding: 2rem 0;
+            text-align: center;
+            color: #ffd9a5;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 1rem; }
+            .nav-links { gap: 1.2rem; }
+            .hero-caption h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">STARTIMESS</div>
+            <ul class="nav-links">
+                <li><a href="accueil.html" class="active">Accueil</a></li>
+                <li><a href="chaines.html">Chaînes</a></li>
+                <li><a href="formule.html">Formules</a></li>
+                <li><a href="aide.html">Aide</a></li>
+            </ul>
+            <button class="btn-outline-light" onclick="alert('Espace abonné Startimess')">Espace abonné</button>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-image">
+                    <!-- >>> INSÉREZ ICI VOTRE GRANDE IMAGE D'ACCUEIL (famille, décodeur, télé) <<< -->
+                    <img src="stra.jpg" alt="Grande image Startimess">
+                </div>
+                <div class="hero-caption">
+                    <h1>La télévision pour toute la famille</h1>
+                    <p>Des centaines de chaînes, du sport, des films et des séries à petit prix. Paiement mobile facile.</p>
+                    <button class="btn-primary" onclick="location.href='formules.html'">Je découvre les formules</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2026 Startimess Côte d'Ivoire — Le divertissement accessible à tous</p>
+        </div>
+    </footer>
+</body>
+</html>
